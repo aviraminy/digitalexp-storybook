@@ -1,0 +1,646 @@
+
+:root {
+  // Cmain Colors
+  --white: #fff;
+  --black: #000;
+  
+  --main-color: #22212E; //text
+  --secondary-color: #9492A2; //text 2
+  --link-color: #0098FF;
+  --footer-links-color: #f8ff9fB;
+  --selected-tab-bg: #AAADD1;
+  --selected-step-bg: #E60F78;
+  --sucsess: #189F47;
+  --error: #fe2828;
+  --footer-bg: #F0F3F7;
+  --bg-color: #FAFAFA;
+  --lines: #E3E5E3;
+  --disabled: #F2F2F2;
+  
+  
+  --transition: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --space: 15px;
+  
+  // Btn vars ---------------------------
+  ///////////////////////////////////////
+  
+  // BG
+  --btn-bg: var(--main-color);
+  --btn-bg-hover: #37394D;
+  --btn-bg-pressed: #25212E;
+  
+  // text colors
+  --btn-color: var(--white);
+  --btn-color-secondary: var(--main-color);
+  
+  // Negative Colors
+  --btn-color-negative: var(--main-color);
+  --btn-bg-negative: var(--white);
+  --btn-bg-hover-negative: #E6E6E6;
+  
+  // Border Colors
+  --btn-border-color: var(--main-color);
+  --btn-border-color-secondary: var(--btn-bg-hover);
+  
+  // Disabled
+  --btn-color-disabled: #bdbdbd;
+  --btn-bg-disabled: #F2F2F2;
+  --btn-border-color-disabled: var(--btn-color-disabled);
+  
+  // Styling
+  --btn-height: 50px;
+  --btn-min-width: 150px;
+  --btn-padding: 0 30px;
+  --btn-margin: 0 20px 20px 0;
+  --btn-link-icon-size: 15px;
+  --border-width: 2px;
+  --btn-radius: 0;
+  
+  // Tags vars ---------------------------
+  ///////////////////////////////////////
+  
+  --tag-height: 20px;
+  --tag-padding: 10px;
+  --tag-txt-color: var(--white);
+  --tag-bg-color: var(--secondary-color);
+  --tag-360-height: 30px;
+  --tag-360-padding: 15px;
+  --tag-360-txt-color: var(--white);
+  --device-ribbon: #59576E;
+  
+  // checkbox vars ---------------------------
+  ///////////////////////////////////////
+  --checkbox-height: 50px;
+  --checkbox-min-width: 150px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+details {
+  background: #f0f3f7;
+  padding: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  border-bottom: 3px solid #d5d7de;
+  
+  
+  summary {
+    outline: none;
+    cursor: pointer;
+  }
+  
+  &[open] {
+    summary {
+      border-bottom: 1px solid var(--main-color);
+      padding: 0 0 10px;
+    }
+  }
+}
+
+section {
+  margin-bottom: 15px;
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ccc;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+}
+
+.negative {
+  background: var(--main-color);
+}
+
+.sb-tag-wrapper {
+  margin: 0 10px 0 0;
+}
+
+// Buttons - Start
+
+%sb-button-basic {
+  font-weight: 400;
+  font-size: 14px;
+  outline: none;
+  
+  
+  border-width: var(--border-width);
+  border-style: solid;
+  border-color: transparent;
+  cursor: pointer;
+  border-radius: var(--btn-radius);
+  margin: var(--btn-margin);
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  // user-select: none;
+  vertical-align: middle;
+  -moz-appearance: none;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: inherit;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  padding: var(--btn-padding);
+  min-width: 100%;
+  height: var(--btn-height);
+  box-shadow: 0 0 4px 0 rgba(0,0,0,.2);
+  transition: 
+    background .3s var(--transition), 
+    border .3s var(--transition), 
+    box-shadow .3s var(--transition);
+  
+  &:active {
+    box-shadow: inset 0 0 4px 0 rgba(0,0,0,.2);
+  }
+  
+  &[disabled],
+  &.disabled,
+  &.is-disabled,
+  &:hover[disabled],
+  &:hover.is-disabled {
+    border-color: var(--btn-border-color-disabled);
+    background: var(--btn-bg-disabled);
+    color: var(--btn-color-disabled);
+    cursor: not-allowed;
+    text-decoration: none;
+    pointer-events: none;
+    box-shadow: none;
+  }
+  
+  @media screen and (min-width: 480px) {
+    min-width: var(--btn-min-width);
+  }
+}
+
+%sb-link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  
+  color: inherit;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 0;
+  display: inline-flex;
+  outline: none;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  vertical-align: middle;
+  -moz-appearance: none;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: inherit;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  height: auto;
+  line-height: 1.3;
+  box-shadow: none;
+  width: 100%;
+  
+  @media screen and (min-width: 480px) {
+    width: auto;
+  }
+  
+  &[disabled],
+  &.disabled,
+  &.is-disabled,
+  &:hover[disabled],
+  &:hover.is-disabled {
+    color: var(--btn-color-disabled);
+    cursor: not-allowed;
+    text-decoration: none;
+    pointer-events: none;
+    box-shadow: none;
+  }
+}
+
+%sb-button-inline {
+  @extend %sb-button-basic;
+  border-color: var(--btn-bg);
+  color: var(--btn-color-secondary);
+  box-shadow: none;
+  margin: 0 0 var(--space);
+  padding: 0;
+  
+  @media screen and (min-width: 480px) {
+    margin: 0; 
+  }
+  
+  &:hover{
+    border-color: var(--btn-border-color-secondary);
+    background: var(--btn-bg-disabled);
+    z-index: 1;
+  }
+  
+  &[active],
+  &.active,
+  &.sb-active,
+  &.is-active {
+    border-color: var(--btn-bg);
+    background: var(--btn-bg);
+    color: var(--btn-color);
+  }
+  
+  &.as-check {
+    
+    input[type="checkbox"] {
+      // width: 1px;
+      // height: 1px;
+      // position: absolute;
+      // left: -999999em;
+      cursor: inherit;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      opacity: 0;
+      padding: 0;
+      background: #000;
+      
+      &:checked {
+        ~ .sb-button-text {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-color: var(--btn-bg);
+          background: var(--btn-bg);
+          color: var(--btn-color);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+			}
+    }
+  }
+  
+  &.as-radio {
+    
+    input[type="radio"] {
+      // width: 1px;
+      // height: 1px;
+      // position: absolute;
+      // left: -999999em;
+      cursor: inherit;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      opacity: 0;
+      padding: 0;
+      background: #000;
+      
+      &:checked {
+        ~ .sb-button-text {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-color: var(--btn-bg);
+          background: var(--btn-bg);
+          color: var(--btn-color);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+			}
+    }
+  }
+}
+
+.sb-button-primary {
+  @extend %sb-button-basic;
+  border-color: var(--btn-bg);
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  
+  &:hover{
+    background: var(--btn-bg-hover);
+    color: var(--btn-color);
+  }
+  
+  &.negative {
+    background: var(--btn-bg-negative);
+    color: var(--btn-color-negative);
+    border-color: var(--btn-bg-negative);
+
+    &:hover{
+      background: var(--btn-bg-hover-negative);
+      border-color: var(--btn-bg-hover-negative);
+    }
+    
+    &[disabled],
+    &.disabled,
+    &.is-disabled,
+    &:hover[disabled],
+    &:hover.is-disabled {
+      border-color: var(--btn-border-color-disabled);
+      background: var(--btn-bg-disabled);
+      color: var(--btn-color-disabled);
+      cursor: not-allowed;
+      text-decoration: none;
+      pointer-events: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.sb-button-primary-negative {
+  @extend %sb-button-basic;
+  background: var(--btn-bg-negative);
+  color: var(--btn-color-negative);
+  border-color: var(--btn-bg-negative);
+
+  &:hover{
+    background: var(--btn-bg-hover-negative);
+    border-color: var(--btn-bg-hover-negative);
+  }
+}
+
+.sb-button-secondary {
+  @extend %sb-button-basic;
+  background: var(--white);
+  color: var(--btn-color-secondary);
+  border-color: var(--btn-border-color);
+
+  &:hover{
+    border-color: var(--btn-border-color-secondary);
+  }
+  
+  &[disabled],
+  &.disabled,
+  &.is-disabled,
+  &:hover[disabled],
+  &:hover.is-disabled {
+    color: var(--btn-color-disabled);
+    border-color: var(--btn-color-disabled);
+    background: var(--white);
+  }
+  
+  &.negative {
+    background: var(--btn-bg);
+    color: var(--white);
+    border-color: var(--white);
+
+    &:hover{
+      border-color: var(--btn-bg-hover-negative);
+      color: var(--btn-bg-hover-negative);
+    }
+
+    &[disabled],
+    &.disabled,
+    &.is-disabled,
+    &:hover[disabled],
+    &:hover.is-disabled {
+      color: var(--btn-bg);
+      border-color: var(--btn-bg-hover-negative);
+      background: var(--btn-bg-hover-negative);
+    }
+  }
+}
+
+.sb-button-secondary-negative {
+  @extend %sb-button-basic;
+  background: var(--btn-bg);
+  color: var(--white);
+  border-color: var(--white);
+  
+  &:hover{
+    border-color: var(--btn-bg-hover-negative);
+    color: var(--btn-bg-hover-negative);
+  }
+  
+  &[disabled],
+  &.disabled,
+  &.is-disabled,
+  &:hover[disabled],
+  &:hover.is-disabled {
+    color: var(--btn-bg);
+    border-color: var(--btn-bg-hover-negative);
+    background: var(--btn-bg-hover-negative);
+  }
+}
+
+.sb-button-primary,
+.sb-button-secondary {
+  
+  .sb-icon {
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    
+    &.man {
+      background: url(http://www.sclance.com/pngs/phone-icon-white-png/phone_icon_white_png_1016482.png) no-repeat center center / contain;
+    }
+  }
+  
+  &.as-icon {
+    min-width: var(--btn-height);
+    padding: 0;
+    
+    .sb-button-text {
+      display: none;
+    }
+  }
+  
+  &.rounded {
+    border-radius: var(--btn-height);
+  }
+}
+
+.sb-link {
+  @extend %sb-link;
+  color: var(--link-color);
+  
+  + .sb-link {
+   
+    @media screen and (min-width: 480px) {
+      border-left: 1px solid #ccc;
+      padding-left: 10px;
+      margin-left: 10px;
+    }
+  }
+  
+  &.with-icon {
+    
+    &:before {
+      content: "";
+      width: var(--btn-link-icon-size);
+      height: var(--btn-link-icon-size);
+      display: inline-block;
+      margin-right: 5px;
+      background: #000;
+    }
+    
+    &.share {
+      &:before {
+        background: url(https://cdn4.iconfinder.com/data/icons/materia-flat-social-free/24/038_026_share_link_friends_android_material-256.png) no-repeat center center / contain;
+      }
+    }
+  }
+}
+
+.sb-group {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 0;
+  // margin: 0 0 var(--sapce);
+  
+  &__item {
+    padding: 0;
+    margin: 0 0 0 calc(-1*var(--border-width));
+  }
+  
+  .sb-button-inline {
+    @extend %sb-button-inline;
+    flex-direction: column;
+    
+    @media screen and (min-width: 480px) {
+      flex-direction: row;
+    }
+    
+    &:nth-of-type(n+2) {
+      margin-left: -2px;
+    }
+  }
+  
+  &.stretch {
+    .sb-button-inline {
+      flex: 1;
+      min-width: auto;
+      padding: 0;
+    }
+  }
+}
+
+.sb-button-custom {
+  @extend %sb-button-basic;
+  background: lightblue;
+  border-radius: 20px 0;
+  color: #fff;
+  font-size: 2rem;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+// Buttons - End
+
+// tags - Start
+%sb-tag-basic {
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 10px;
+  font-weight: 300; 
+  align-items: center;
+  justify-content: center;
+  color: var(--tag-txt-color);
+  height: var(--tag-height);
+  background: var(--tag-bg-color);
+  text-transform: uppercase;
+  padding: 0 var(--tag-padding);
+}
+
+.sb-tag-wrapper {
+  @extend %sb-tag-basic;
+  color: var(--tag-txt-color);
+  background: var(--tag-bg-color);
+  
+  &.device {
+    background: var(--device-ribbon);
+  }
+  
+  &.negative {
+    background: var(--white);
+    color: var(--device-ribbon);
+  }
+}
+
+.sb-tag-360 {
+  @extend %sb-tag-basic;
+  height: var(--tag-360-height);
+  padding: 0 var(--tag-360-padding);
+  color: var(--tag-txt-color);
+  background: var(--tag-bg-color);
+}
+// tags - End
+
+// checkbox - start
+.vs-check {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 10px;
+
+  .vs-form__checkbox {
+    font-family: inherit;
+    font-size: 14px;
+    margin-right: 5px;
+    padding-left: 30px;
+    position: relative;
+
+    input[type="checkbox"] {
+      width: 1px;
+      height: 1px;
+      position: absolute;
+      left: -999999em;
+    }
+  }
+}
+
+.vs-check .vs-form__checkbox .vs-form__text {
+    font-family: inherit;
+    text-align: left;
+    font-size: 16px;
+    color: red;
+    line-height: 20px;
+    transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.vs-check .vs-form__checkbox .vs-form__text + .vs-form__text {
+    margin-left: 15px;
+}
+.vs-check .vs-form__checkbox .vs-form__design {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: solid 1px var(--checkbox);
+    display: inline-flex;
+    border-radius: 3px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.vs-check .vs-form__checkbox input[type="checkbox"]:checked ~ .vs-form__text {
+    color: #fff;
+}
+.vs-check .vs-form__checkbox input[type="checkbox"]:checked ~ .vs-form__design {
+   //  background-image: url(../images/check.svg);
+    background-color: var(--checkbox);
+    background-size: 50% 50%;
+    background-position: 50% 50%;
+    border-color: var(--checkbox);
+}
+// checkbox - End
