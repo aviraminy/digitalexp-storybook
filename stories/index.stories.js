@@ -7,7 +7,7 @@ import { withInfo } from '@storybook/addon-info';
 
 import { Welcome } from '@storybook/react/demo';
 import Button from '../src/components/form/Button'
-import { text, boolean, number } from '@storybook/addon-knobs/react';
+import { text, boolean, number, select } from '@storybook/addon-knobs/react';
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -27,9 +27,10 @@ storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo(
 
 storiesOf('Button', module)
   .add('primary', withInfo('This is an informational paragraph you can use to describe your component')(
-    () => <Button onClick={action('clicked')} type={text('type', 'primary')} >Primary Button</Button>))
+    () => <Button onClick={action('clicked')} type={select('type', ['primary','secondary'])} >{text('Label', 'Click Me')}</Button>))
   .add('secondary', withInfo('This is an informational paragraph you can use to describe your component')(
     () => <Button onClick={action('clicked')} type='secondary'>Secondary Button</Button>))
   .add('primary-negative', withInfo('This is an informational paragraph you can use to describe your component')(
     () => <Button onClick={action('clicked')} type='primary-negative'>Secondary Button</Button>));
+    
 
