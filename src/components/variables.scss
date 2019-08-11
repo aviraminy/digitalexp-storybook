@@ -1,0 +1,76 @@
+
+:root {
+    // Cmain Colors
+    --white: #fff;
+    --black: #000;
+    
+    --main-color: #22212E; //text
+    --secondary-color: #9492A2; //text 2
+    --link-color: #0098FF;
+    --footer-links-color: #f8ff9fB;
+    --selected-tab-bg: #AAADD1;
+    --selected-step-bg: #E60F78;
+    --sucsess: #189F47;
+    --error: #fe2828;
+    --footer-bg: #F0F3F7;
+    --bg-color: #FAFAFA;
+    --lines: #E3E5E3;
+    --disabled: #F2F2F2;
+    
+    
+    --transition: cubic-bezier(0.4, 0.0, 0.2, 1);
+    --space: 15px;
+    
+    // Btn vars ---------------------------
+    ///////////////////////////////////////
+    
+    // BG
+    --btn-bg: var(--main-color);
+    --btn-bg-hover: #37394D;
+    --btn-bg-pressed: #25212E;
+    
+    // text colors
+    --btn-color: var(--white);
+    --btn-color-secondary: var(--main-color);
+    
+    // Negative Colors
+    --btn-color-negative: var(--main-color);
+    --btn-bg-negative: var(--white);
+    --btn-bg-hover-negative: #E6E6E6;
+    
+    // Border Colors
+    --btn-border-color: var(--main-color);
+    --btn-border-color-secondary: var(--btn-bg-hover);
+    
+    // Disabled
+    --btn-color-disabled: #bdbdbd;
+    --btn-bg-disabled: #F2F2F2;
+    --btn-border-color-disabled: var(--btn-color-disabled);
+    
+    // Styling
+    --btn-height: 50px;
+    --btn-min-width: 150px;
+    --btn-padding: 0 30px;
+    --btn-margin: 0 20px 20px 0;
+    --btn-link-icon-size: 15px;
+    --border-width: 2px;
+    --btn-radius: 0;
+    
+    // Tags vars ---------------------------
+    ///////////////////////////////////////
+    
+    --tag-height: 20px;
+    --tag-padding: 10px;
+    --tag-txt-color: var(--white);
+    --tag-bg-color: var(--secondary-color);
+    --tag-360-height: 30px;
+    --tag-360-padding: 15px;
+    --tag-360-txt-color: var(--white);
+    --device-ribbon: #59576E;
+    
+    // checkbox vars ---------------------------
+    ///////////////////////////////////////
+    --checkbox-height: 50px;
+    --checkbox-min-width: 150px;
+  }
+  
