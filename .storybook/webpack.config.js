@@ -17,8 +17,6 @@ module.exports = async ({ config, mode }) => {
     loaders: [require.resolve('@storybook/addon-storysource/loader')],
     enforce: 'pre',
   });
-
-
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     use: [

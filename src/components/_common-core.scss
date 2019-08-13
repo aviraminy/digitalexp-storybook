@@ -1,4 +1,4 @@
-$test: red;
+
 :root {
     // Cmain Colors
     --white: #fff;
@@ -17,17 +17,22 @@ $test: red;
     --lines: #E3E5E3;
     --disabled: #F2F2F2;
     
+    --gray-hover: #37394D;
+    --gray-hover-negative: #E6E6E6;
+    --gray-pressed: #25212E;
+    --gray-disabled: #bdbdbd;
+    
     
     --transition: cubic-bezier(0.4, 0.0, 0.2, 1);
     --space: 15px;
     
     // Btn vars ---------------------------
     ///////////////////////////////////////
-    
+  
     // BG
     --btn-bg: var(--main-color);
-    --btn-bg-hover: #37394D;
-    --btn-bg-pressed: #25212E;
+    --btn-bg-hover: var(--gray-hover);
+    --btn-bg-pressed: var(--gray-pressed);
     
     // text colors
     --btn-color: var(--white);
@@ -36,15 +41,15 @@ $test: red;
     // Negative Colors
     --btn-color-negative: var(--main-color);
     --btn-bg-negative: var(--white);
-    --btn-bg-hover-negative: #E6E6E6;
+    --btn-bg-hover-negative: var(--gray-hover-negative);
     
     // Border Colors
     --btn-border-color: var(--main-color);
     --btn-border-color-secondary: var(--btn-bg-hover);
     
     // Disabled
-    --btn-color-disabled: #bdbdbd;
-    --btn-bg-disabled: #F2F2F2;
+    --btn-color-disabled: var(--gray-disabled);
+    --btn-bg-disabled: var(--disabled);
     --btn-border-color-disabled: var(--btn-color-disabled);
     
     // Styling
@@ -68,9 +73,6 @@ $test: red;
     --tag-360-txt-color: var(--white);
     --device-ribbon: #59576E;
     
-    // checkbox vars ---------------------------
-    ///////////////////////////////////////
-    --checkbox-height: 50px;
-    --checkbox-min-width: 150px;
+    
   }
   
