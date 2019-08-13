@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import './Checkbox.scss';
+import './_checkbox.scss';
 
 interface Props {
     //this is text that will appear next to checkbix

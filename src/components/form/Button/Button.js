@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 import { node, oneOf, func } from 'prop-types';
-import './Button.scss';
+import './_button.scss';
 
 class Button extends Component {
 
